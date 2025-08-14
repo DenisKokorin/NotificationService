@@ -14,6 +14,8 @@ func main() {
 	kafkaPort := os.Getenv("KAFKA_PORT")
 	kafkaTopic := os.Getenv("KAFKA_TOPIC")
 
+	fmt.Println(kafkaTopic)
+
 	var kafkaAddr []string
 	kafkaAddr = append(kafkaAddr, fmt.Sprintf("%s:%s", kafkaHost, kafkaPort))
 
