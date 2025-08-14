@@ -32,8 +32,9 @@ func main() {
 	emailPassword := os.Getenv("EMAIL_PASSWORD")
 	smtpHost := os.Getenv("SMTP_HOST")
 	smtpPort, _ := strconv.Atoi(os.Getenv("SMTP_PORT"))
+	smtpAddr := os.Getenv("SMTP_ADDR")
 
-	emailService := service.NewEmailService(emailFrom, emailPassword, smtpHost, smtpPort)
+	emailService := service.NewEmailService(emailFrom, emailPassword, smtpHost, smtpPort, smtpAddr)
 	kafkaConsumer := kafka.NewKafkaConsumer(
 		kafkaAddr,
 		kafkaTopic,

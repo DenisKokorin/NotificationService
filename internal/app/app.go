@@ -60,8 +60,6 @@ func (a *App) emailWorker(ctx context.Context, msgChan <-chan models.EmailMessag
 				msg.To,
 				msg.Subject,
 				msg.TextBody,
-				msg.HtmlBody,
-				msg.Attachments,
 			)
 
 			if err != nil {
