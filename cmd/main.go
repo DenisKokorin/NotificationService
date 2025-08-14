@@ -7,12 +7,21 @@ import (
 	"notification/internal/service"
 	"os"
 	"strconv"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		panic(err)
+	}
+
 	kafkaHost := os.Getenv("KAFKA_HOST")
 	kafkaPort := os.Getenv("KAFKA_PORT")
 	kafkaTopic := os.Getenv("KAFKA_TOPIC")
+
+	fmt.Println(kafkaHost, kafkaPort, kafkaTopic)
 
 	fmt.Println(kafkaTopic)
 
